@@ -12,7 +12,7 @@ export const useCart = () => {
 
   useEffect(()=>{
     if(cartItems !== undefined)
-    localStorage.setItem('cart', JSON.stringify(cartItems))
+      localStorage.setItem('cart', JSON.stringify(cartItems))
   }, [cartItems])
 
   const resetCart=()=>{
