@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 
 const Well = () => {
-
 const [show, setShow]= useState();
 
 useEffect(()=>{
