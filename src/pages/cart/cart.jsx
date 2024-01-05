@@ -12,7 +12,8 @@ const Cart = () => {
         {PRODUCTS.map((p)=>{
             if( cartItems?.some((i)=>i.id ===p.id && i.count > 0))
             return <Product key={p.id} data={p}/>
-          })}
+          })
+        }
       </div>
       <button className='btn btn-danger m-3' onClick={resetCart}>reset cart</button>
     </>
