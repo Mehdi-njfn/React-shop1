@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Nav from './component/navbar';
+import Cart from './pages/cart/cart';
+import Shop from './pages/shop/shop';
+import { ShopCnotaxtProvider } from './context/shopContext';
+import Well from './component/well';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className='App'>
+        <ShopCnotaxtProvider>
+        <Router>
+          <Nav />
+          <Well />
+          <Routes>
+            <Route path='/' element={<Shop />}/>
+            <Route path='/cart' element={<Cart />}/>
+          </Routes>
+        </Router>
+        </ShopCnotaxtProvider>
+      </div>
+    );
 }
 
 export default App;
